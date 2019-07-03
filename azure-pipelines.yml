@@ -17,6 +17,13 @@ steps:
   displayName: "install node & NPM"
   inputs:
     version: 10.14.2
+    
+- task: Npm@1
+  displayName: 'Install Dependencies'
+  inputs:
+    command: custom
+    verbose: false
+    customCommand: --production install
 
 - script: |
     echo Add other tasks to build, test, and deploy your project.
