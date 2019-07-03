@@ -9,10 +9,6 @@ trigger:
 pool:
   vmImage: 'ubuntu-latest'
 
-steps:
-- script: echo Hello, world!
-  displayName: 'Run a one-line script'
-
 - task: UseNode@1
   displayName: "install node & NPM"
   inputs:
@@ -25,9 +21,12 @@ steps:
     verbose: false
     customCommand: --production install
 
-- script: |
-    echo Add other tasks to build, test, and deploy your project.
-    echo See https://aka.ms/yaml
-  displayName: 'Run a multi-line script'
+- task: Npm@1
+  displayName: 'Run Build'
+  inputs:
+    command: custom
+    verbose: false
+    customCommand: run compile
+
 
 
