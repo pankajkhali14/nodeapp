@@ -27,7 +27,7 @@ steps:
   inputs:
     command: custom
     verbose: false
-    customCommand: run compile
+    customCommand: run
 
 
 
